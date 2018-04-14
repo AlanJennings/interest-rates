@@ -24,6 +24,18 @@ public class InterestRates {
         interestRateTiers.put(tierOneBalance, tierOneRate);
     }
 
+    protected  double calculateInterest(double balance, int years)
+    {
+        double interestEarned = 0.0;
+
+        for (int i = 0; i < years; i++)
+        {
+            interestEarned += calculateInterest(balance + interestEarned);
+        }
+
+        return interestEarned;
+    }
+
     protected double calculateInterest(double balance)
     {
         double interestEarned = 0.0;

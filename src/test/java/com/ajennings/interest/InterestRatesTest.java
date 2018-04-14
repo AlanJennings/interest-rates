@@ -90,4 +90,19 @@ public class InterestRatesTest {
         //Then
         assertEquals("return on 1,200,000", 35940.00, outputForOnePointTwoMillion, 0);
     }
+
+    @Test
+    public void test_fiveYearCompoundInterest_1000()
+    {
+        //Given
+        double oneThousandPounds = 1000;
+        int years = 5;
+
+        //When
+        double outputFor1000PoundsOver5Years = interestRatesTest.calculateInterest(oneThousandPounds, years);
+
+        //Then
+        assertEquals("return on 1000 over 5 years", 52.07, outputFor1000PoundsOver5Years, 0);
+
+    }
 }
